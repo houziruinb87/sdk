@@ -1,73 +1,73 @@
 package com.missfresh.weigh;
 
 public class WeightData {
-    private String sMode;
-    private String sStatus;
-    private boolean sZero;
-    private String sUnit;
-    private String sNetWeight;
-    private String sTareWeight;
-    private String sGrossWeight;
+    private String model;
+    private String status;
+    private boolean isZero;
+    private String unit;
+    private String netWeight;
+    private String tareWeight;
+    private String grossWeight;
     private boolean isStable;
 
 
     public WeightData() {
     }
 
-    public String getsMode() {
-        return sMode;
+    public String getModel() {
+        return model;
     }
 
-    public void setsMode(String sMode) {
-        this.sMode = sMode;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getsStatus() {
-        return sStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setsStatus(String sStatus) {
-        this.sStatus = sStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public boolean issZero() {
-        return sZero;
+    public boolean isZero() {
+        return isZero;
     }
 
-    public void setsZero(boolean sZero) {
-        this.sZero = sZero;
+    public void setZero(boolean zero) {
+        isZero = zero;
     }
 
-    public String getsUnit() {
-        return sUnit;
+    public String getUnit() {
+        return unit;
     }
 
-    public void setsUnit(String sUnit) {
-        this.sUnit = sUnit;
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
-    public String getsNetWeight() {
-        return sNetWeight;
+    public String getNetWeight() {
+        return netWeight;
     }
 
-    public void setsNetWeight(String sNetWeight) {
-        this.sNetWeight = sNetWeight;
+    public void setNetWeight(String netWeight) {
+        this.netWeight = netWeight;
     }
 
-    public String getsTareWeight() {
-        return sTareWeight;
+    public String getTareWeight() {
+        return tareWeight;
     }
 
-    public void setsTareWeight(String sTareWeight) {
-        this.sTareWeight = sTareWeight;
+    public void setTareWeight(String tareWeight) {
+        this.tareWeight = tareWeight;
     }
 
-    public String getsGrossWeight() {
-        return sGrossWeight;
+    public String getGrossWeight() {
+        return grossWeight;
     }
 
-    public void setsGrossWeight(String sGrossWeight) {
-        this.sGrossWeight = sGrossWeight;
+    public void setGrossWeight(String grossWeight) {
+        this.grossWeight = grossWeight;
     }
 
     public boolean isStable() {

@@ -139,25 +139,24 @@ public class MFLabelPrinter {
      *
      * @param title 打印标题
      * @param spec  打印规格
-     * @param netWeight 净重
-     * @param time  生产时间
+     * @param netWeight 净重  纯数字,接收的是以g为单位的纯数字
+     * @param time  生产时间 按照20200102  YYYYMMDD形式传递
      * @param storeCondition 存储条件
+     * @param SNCode SN
      * @param materialCode 原料编码
      * @param SKUCode sku编码
-     * @param SNCode 包裹号
      * @return 打印是否成功
      */
-    public boolean printBitmap(String title, String spec, String netWeight, String time, String storeCondition, String materialCode, String SKUCode, String SNCode){
-       if(mContext!=null){
-           int printerStatus = mLabelPrinter.GetStatus();
-           if(printerStatus != 0){
-               return false;
-           }else {
-               return   mLabelPrinter.PrintLabelBitmap( BitMapUtil.createBitmap(mContext,title,spec,netWeight,time,storeCondition,SNCode,materialCode,SKUCode));
-
-           }
-       }else {
-           return false;
-       }
+    public boolean printBitmap(String title, String spec, String netWeight, String time, String storeCondition, String SNCode, String materialCode, String SKUCode){
+        if(mContext!=null){
+            int printerStatus = mLabelPrinter.GetStatus();
+            if(printerStatus != 0){
+                return false;
+            }else {
+                return   mLabelPrinter.PrintLabelBitmap( BitMapUtil.createBitmap(mContext,title,spec,netWeight,time,storeCondition,SNCode,materialCode,SKUCode));
+            }
+        }else {
+            return false;
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.missfresh.weigh;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.io.File;
 
@@ -55,13 +54,26 @@ public class MFWeigh {
             @Override
             public void onWeightChanged(WeightInfo weightInfo) {
                 WeightData weightData = new WeightData();
-                weightData.setsGrossWeight(weightInfo.getGrossWeight());
-                weightData.setsTareWeight(weightInfo.getTareWeight());
-                weightData.setsMode(weightInfo.getMode());
-                weightData.setsNetWeight(weightInfo.getNetWeight());
-                weightData.setsStatus(weightInfo.getStatus());
-                weightData.setsUnit(weightInfo.getUnit());
-                weightData.setsZero(weightInfo.getZero());
+                weightData.setGrossWeight(weightInfo.getGrossWeight());
+                weightData.setTareWeight(weightInfo.getTareWeight());
+                weightData.setModel(weightInfo.getMode());
+                weightData.setNetWeight(weightInfo.getNetWeight());
+                weightData.setStatus(weightInfo.getStatus());
+                if(weightInfo.getUnit().equals("kg")){
+                    weightData.setUnit("g");
+                    try {
+                        float floatKg = Float.parseFloat(weightInfo.getNetWeight());
+                        int intG = (int) (floatKg*1000);
+                        weightData.setNetWeight(intG+"");
+                    }catch (Exception e){
+                        weightData.setNetWeight("0");
+                    }
+                }else {
+                    weightData.setNetWeight(weightInfo.getNetWeight());
+                    weightData.setUnit(weightInfo.getUnit());
+
+                }
+                weightData.setZero(weightInfo.getZero());
                 if (weightInfo.getStatus() != null && weightInfo.getStatus().equals("Stable")) {
                     weightData.setStable(true);
                 } else {
@@ -70,8 +82,6 @@ public class MFWeigh {
                 if (mOnWeightChangeListener != null) {
                     mOnWeightChangeListener.onWeightChanged(weightData);
 
-                } else {
-                    Log.i(TAG, "重量监听者没有初始化");
                 }
             }
         });
@@ -98,13 +108,26 @@ public class MFWeigh {
             @Override
             public void onWeightChanged(WeightInfo weightInfo) {
                 WeightData weightData = new WeightData();
-                weightData.setsGrossWeight(weightInfo.getGrossWeight());
-                weightData.setsTareWeight(weightInfo.getTareWeight());
-                weightData.setsMode(weightInfo.getMode());
-                weightData.setsNetWeight(weightInfo.getNetWeight());
-                weightData.setsStatus(weightInfo.getStatus());
-                weightData.setsUnit(weightInfo.getUnit());
-                weightData.setsZero(weightInfo.getZero());
+                weightData.setGrossWeight(weightInfo.getGrossWeight());
+                weightData.setTareWeight(weightInfo.getTareWeight());
+                weightData.setModel(weightInfo.getMode());
+                weightData.setNetWeight(weightInfo.getNetWeight());
+                weightData.setStatus(weightInfo.getStatus());
+                if(weightInfo.getUnit().equals("kg")){
+                    weightData.setUnit("g");
+                    try {
+                        float floatKg = Float.parseFloat(weightInfo.getNetWeight());
+                        int intG = (int) (floatKg*1000);
+                        weightData.setNetWeight(intG+"");
+                    }catch (Exception e){
+                        weightData.setNetWeight("0");
+                    }
+                }else {
+                    weightData.setNetWeight(weightInfo.getNetWeight());
+                    weightData.setUnit(weightInfo.getUnit());
+
+                }
+                weightData.setZero(weightInfo.getZero());
                 if (weightInfo.getStatus() != null && weightInfo.getStatus().equals("Stable")) {
                     weightData.setStable(true);
                 } else {
@@ -113,8 +136,6 @@ public class MFWeigh {
                 if (mOnWeightChangeListener != null) {
                     mOnWeightChangeListener.onWeightChanged(weightData);
 
-                } else {
-                    Log.i(TAG, "重量监听者没有初始化");
                 }
             }
         });

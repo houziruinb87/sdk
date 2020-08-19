@@ -31,12 +31,21 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
-//添加
-publish {
-    userOrg = 'listenergao'//bintray.com用户名
-    groupId = 'com.listenergao'//jcenter上的路径
-    artifactId = 'customprogressbarlib'//项目名称
-    publishVersion = '1.0.0'//版本号
-    desc = 'With a schedule, according to the horizontal direction or circular custom progress bar'//描述，不重要
-    website = 'https://github.com/ListenerGao/CustomProgressBar'//网站，不重要
+
+publish{
+    //bintray.com的用户名
+    userOrg = 'houzirui'
+    //一般写包名
+    groupId = 'com.missfresh.weigh'
+    //指定仓库名称
+//    repo = "weightPrint"
+    //项目名称
+    artifactId = 'weightPrint'
+    //版本号
+    publishVersion = '1.0.1'
+    //项目描述
+    desc = 'print and weight'
+    //项目网址
+    website = 'https://github.com/houziruinb87/sdk'
+
 }

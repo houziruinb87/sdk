@@ -42,7 +42,8 @@ publish{
     //项目名称
     artifactId = 'weightPrint'
     //版本号
-    publishVersion = '1.1.0'
+
+    publishVersion = '1.1.1'
     //项目描述
     desc = 'print and weight'
     //项目网址
